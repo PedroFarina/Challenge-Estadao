@@ -10,11 +10,14 @@
 		0213F5B125EB3FF2001A9233 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213F5B025EB3FF2001A9233 /* Credentials.swift */; };
 		0213F5B925EB408A001A9233 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213F5B825EB408A001A9233 /* APIClient.swift */; };
 		0213F5C225EB44FA001A9233 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213F5C125EB44FA001A9233 /* APITests.swift */; };
+		02AFBB1925EBF2AD00A15643 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFBB1825EBF2AD00A15643 /* Token.swift */; };
+		02AFBB1F25EBF41800A15643 /* PreviewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFBB1E25EBF41800A15643 /* PreviewNews.swift */; };
 		02F1CCF825EB39FA00915A82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1CCF725EB39FA00915A82 /* AppDelegate.swift */; };
 		02F1CCFA25EB39FA00915A82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1CCF925EB39FA00915A82 /* SceneDelegate.swift */; };
 		02F1CCFC25EB39FA00915A82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1CCFB25EB39FA00915A82 /* ViewController.swift */; };
 		02F1CD0125EB39FB00915A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F1CD0025EB39FB00915A82 /* Assets.xcassets */; };
 		02F1CD3225EB3A2E00915A82 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 02F1CD3125EB3A2E00915A82 /* EndpointsRequests */; };
+		02F868EE25EBFEB900EF44C8 /* DummyLoggedAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F868ED25EBFEB900EF44C8 /* DummyLoggedAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,8 @@
 		0213F5B025EB3FF2001A9233 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		0213F5B825EB408A001A9233 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0213F5C125EB44FA001A9233 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		02AFBB1825EBF2AD00A15643 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		02AFBB1E25EBF41800A15643 /* PreviewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNews.swift; sourceTree = "<group>"; };
 		02F1CCF425EB39FA00915A82 /* Estadao_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Estadao_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F1CCF725EB39FA00915A82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F1CCF925EB39FA00915A82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +44,7 @@
 		02F1CD0525EB39FB00915A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F1CD0A25EB39FC00915A82 /* Estadao_ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Estadao_ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F1CD1025EB39FC00915A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02F868ED25EBFEB900EF44C8 /* DummyLoggedAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyLoggedAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +69,29 @@
 		0213F5BE25EB437C001A9233 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				0213F5B025EB3FF2001A9233 /* Credentials.swift */,
+				02AFBB2725EBFCBF00A15643 /* Entities */,
 				0213F5B825EB408A001A9233 /* APIClient.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		02AFBB2625EBF83800A15643 /* APITests */ = {
+			isa = PBXGroup;
+			children = (
+				0213F5C125EB44FA001A9233 /* APITests.swift */,
+				02F868ED25EBFEB900EF44C8 /* DummyLoggedAPIClient.swift */,
+			);
+			path = APITests;
+			sourceTree = "<group>";
+		};
+		02AFBB2725EBFCBF00A15643 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				02AFBB1825EBF2AD00A15643 /* Token.swift */,
+				0213F5B025EB3FF2001A9233 /* Credentials.swift */,
+				02AFBB1E25EBF41800A15643 /* PreviewNews.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		02F1CCEB25EB39FA00915A82 = {
@@ -74,7 +99,6 @@
 			children = (
 				02F1CCF625EB39FA00915A82 /* Estadao_Challenge */,
 				02F1CD0D25EB39FC00915A82 /* Estadao_ChallengeTests */,
-				02F1CCF525EB39FA00915A82 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +109,7 @@
 				02F1CD0A25EB39FC00915A82 /* Estadao_ChallengeTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		02F1CCF625EB39FA00915A82 /* Estadao_Challenge */ = {
@@ -101,8 +126,9 @@
 		02F1CD0D25EB39FC00915A82 /* Estadao_ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				0213F5C125EB44FA001A9233 /* APITests.swift */,
+				02AFBB2625EBF83800A15643 /* APITests */,
 				02F1CD1025EB39FC00915A82 /* Info.plist */,
+				02F1CCF525EB39FA00915A82 /* Products */,
 			);
 			path = Estadao_ChallengeTests;
 			sourceTree = "<group>";
@@ -240,6 +266,8 @@
 				02F1CCFC25EB39FA00915A82 /* ViewController.swift in Sources */,
 				02F1CCF825EB39FA00915A82 /* AppDelegate.swift in Sources */,
 				0213F5B925EB408A001A9233 /* APIClient.swift in Sources */,
+				02AFBB1925EBF2AD00A15643 /* Token.swift in Sources */,
+				02AFBB1F25EBF41800A15643 /* PreviewNews.swift in Sources */,
 				02F1CCFA25EB39FA00915A82 /* SceneDelegate.swift in Sources */,
 				0213F5B125EB3FF2001A9233 /* Credentials.swift in Sources */,
 			);
@@ -249,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F868EE25EBFEB900EF44C8 /* DummyLoggedAPIClient.swift in Sources */,
 				0213F5C225EB44FA001A9233 /* APITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
