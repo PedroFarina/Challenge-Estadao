@@ -16,9 +16,8 @@ internal class APIClient {
     let credentials: Credentials
     private var jwt: Token?
 
-    internal init(credentials: Credentials, authentication jwt: Token? = nil) {
+    internal init(credentials: Credentials) {
         self.credentials = credentials
-        self.jwt = jwt
     }
 
     internal func login(completionHandler: @escaping (Result<Bool, Error>) -> ()) {
