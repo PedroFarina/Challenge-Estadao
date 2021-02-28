@@ -17,6 +17,8 @@
 		02F1CCFC25EB39FA00915A82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1CCFB25EB39FA00915A82 /* ViewController.swift */; };
 		02F1CD0125EB39FB00915A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02F1CD0025EB39FB00915A82 /* Assets.xcassets */; };
 		02F1CD3225EB3A2E00915A82 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 02F1CD3125EB3A2E00915A82 /* EndpointsRequests */; };
+		02F868F425EC1F0800EF44C8 /* FullNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F868F325EC1F0800EF44C8 /* FullNews.swift */; };
+		02F868F825EC215D00EF44C8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F868F725EC215D00EF44C8 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		02F1CD0525EB39FB00915A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F1CD0A25EB39FC00915A82 /* Estadao_ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Estadao_ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F1CD1025EB39FC00915A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02F868F325EC1F0800EF44C8 /* FullNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNews.swift; sourceTree = "<group>"; };
+		02F868F725EC215D00EF44C8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 				02AFBB1825EBF2AD00A15643 /* Token.swift */,
 				0213F5B025EB3FF2001A9233 /* Credentials.swift */,
 				02AFBB1E25EBF41800A15643 /* PreviewNews.swift */,
+				02F868F325EC1F0800EF44C8 /* FullNews.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 		02F1CD4025EB3D9900915A82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02F868F725EC215D00EF44C8 /* StringExtension.swift */,
 				0213F5BE25EB437C001A9233 /* API */,
 				02F1CCF725EB39FA00915A82 /* AppDelegate.swift */,
 				02F1CCF925EB39FA00915A82 /* SceneDelegate.swift */,
@@ -261,9 +267,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F1CCFC25EB39FA00915A82 /* ViewController.swift in Sources */,
+				02F868F425EC1F0800EF44C8 /* FullNews.swift in Sources */,
 				02F1CCF825EB39FA00915A82 /* AppDelegate.swift in Sources */,
 				0213F5B925EB408A001A9233 /* APIClient.swift in Sources */,
 				02AFBB1925EBF2AD00A15643 /* Token.swift in Sources */,
+				02F868F825EC215D00EF44C8 /* StringExtension.swift in Sources */,
 				02AFBB1F25EBF41800A15643 /* PreviewNews.swift in Sources */,
 				02F1CCFA25EB39FA00915A82 /* SceneDelegate.swift in Sources */,
 				0213F5B125EB3FF2001A9233 /* Credentials.swift in Sources */,

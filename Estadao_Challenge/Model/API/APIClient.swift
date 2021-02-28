@@ -13,14 +13,18 @@ internal class APIClient {
         case unexpectedAnswer
     }
 
-    let credentials: Credentials
+    internal let credentials: Credentials
+
     private var jwt: Token?
+    private var authorizationHeader: [String:String] {
+        ["Authorization": "Bearer \(jwt?.token ?? "")"]
+    }
 
     internal init(credentials: Credentials) {
         self.credentials = credentials
     }
 
-    internal func login(completionHandler: @escaping (Result<Bool, Error>) -> ()) {
+    internal func login(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         Requests.postRequest(url: "https://teste-dev-mobile-api.herokuapp.com/login",
                              method: .post,
                              header: nil,
@@ -38,13 +42,27 @@ internal class APIClient {
         }
     }
 
-    internal func fetchPreviewNews(completionHandler: @escaping (Result<[PreviewNews], Error>) -> ()) {
-        let header = ["Authorization": "Bearer \(jwt?.token ?? "")"]
+    internal func fetchPreviewNews(completionHandler: @escaping (Result<[PreviewNews], Error>) -> Void) {
         Requests.getRequest(url: "https://teste-dev-mobile-api.herokuapp.com/news",
                             decodableType: [PreviewNews].self,
-                            header: header) {
+                            header: authorizationHeader) {
             switch $0 {
             case .result(let news as [PreviewNews]):
+                completionHandler(.success(news))
+            case .result(_):
+                completionHandler(.failure(APIErrors.unexpectedAnswer))
+            case .error(let err):
+                completionHandler(.failure(err))
+            }
+        }
+    }
+
+    internal func fetchFullNews(id: String, completionHandler: @escaping (Result<[FullNews], Error>) -> Void) {
+        Requests.getRequest(url: "https://teste-dev-mobile-api.herokuapp.com/news/\(id)",
+                            decodableType: [FullNews].self,
+                            header: authorizationHeader) {
+            switch $0 {
+            case .result(let news as [FullNews]):
                 completionHandler(.success(news))
             case .result(_):
                 completionHandler(.failure(APIErrors.unexpectedAnswer))

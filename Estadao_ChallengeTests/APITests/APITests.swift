@@ -22,10 +22,10 @@ class APITests: XCTestCase {
             }
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 3, handler: nil)
+        waitForExpectations(timeout: 2, handler: nil)
     }
 
-    func testFetchPreviewNewss() {
+    func testFetchPreviewNews() {
         let sut = APIClient(credentials: .defaultEstadao)
         let expectation = self.expectation(description: "PreviewNews")
         afterLogin(on: sut) {
@@ -39,7 +39,24 @@ class APITests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        waitForExpectations(timeout: 3, handler: nil)
+        waitForExpectations(timeout: 4, handler: nil)
+    }
+
+    func testFetchFullNews() {
+        let sut = APIClient(credentials: .defaultEstadao)
+        let expectation = self.expectation(description: "FullNews")
+        afterLogin(on: sut) {
+            sut.fetchFullNews(id: "1") { (result) in
+                do {
+                    let value = try result.get()
+                    XCTAssertNotNil(value)
+                } catch {
+                    XCTFail("Result threw")
+                }
+                expectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 4, handler: nil)
     }
 
     func afterLogin(on client: APIClient, do completionHandler: @escaping () -> Void) {
