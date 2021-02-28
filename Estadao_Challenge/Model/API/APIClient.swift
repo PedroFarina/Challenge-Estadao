@@ -30,45 +30,45 @@ internal class APIClient {
                              header: nil,
                              params: credentials,
                              decodableType: Token.self) { [weak self] in
-            switch $0 {
-            case .result(let token as Token):
-                self?.jwt = token
-                completionHandler(.success(true))
-            case .result(_):
-                completionHandler(.failure(APIErrors.unexpectedAnswer))
-            case .error(let err):
-                completionHandler(.failure(err))
-            }
+            self?.completeResult(answer: $0, optionalCast: {$0 as? Token}, completionHandler: { (result) in
+                do {
+                    self?.jwt = try result.get()
+                    completionHandler(.success(true))
+                } catch {
+                    completionHandler(.failure(error))
+                }
+            })
         }
     }
 
     internal func fetchPreviewNews(completionHandler: @escaping (Result<[PreviewNews], Error>) -> Void) {
         Requests.getRequest(url: "https://teste-dev-mobile-api.herokuapp.com/news",
                             decodableType: [PreviewNews].self,
-                            header: authorizationHeader) {
-            switch $0 {
-            case .result(let news as [PreviewNews]):
-                completionHandler(.success(news))
-            case .result(_):
-                completionHandler(.failure(APIErrors.unexpectedAnswer))
-            case .error(let err):
-                completionHandler(.failure(err))
-            }
+                            header: authorizationHeader) { [weak self] in
+            self?.completeResult(answer: $0, optionalCast: {$0 as? [PreviewNews]}, completionHandler: completionHandler)
         }
     }
 
     internal func fetchFullNews(id: String, completionHandler: @escaping (Result<[FullNews], Error>) -> Void) {
         Requests.getRequest(url: "https://teste-dev-mobile-api.herokuapp.com/news/\(id)",
                             decodableType: [FullNews].self,
-                            header: authorizationHeader) {
-            switch $0 {
-            case .result(let news as [FullNews]):
-                completionHandler(.success(news))
-            case .result(_):
+                            header: authorizationHeader) { [weak self] in
+            self?.completeResult(answer: $0, optionalCast: {$0 as? [FullNews]}, completionHandler: completionHandler)
+        }
+    }
+
+    private func completeResult<T>(answer: TaskAnswer<Any>,
+                                   optionalCast: (Any) -> T?,
+                                   completionHandler: @escaping (Result<T, Error>) -> Void) {
+        switch answer {
+        case .result(let answer):
+            if let safeValue = optionalCast(answer) {
+                completionHandler(.success(safeValue))
+            } else {
                 completionHandler(.failure(APIErrors.unexpectedAnswer))
-            case .error(let err):
-                completionHandler(.failure(err))
             }
+        case .error(let err):
+            completionHandler(.failure(err))
         }
     }
 }

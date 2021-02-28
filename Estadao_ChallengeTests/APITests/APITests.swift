@@ -10,8 +10,17 @@ import XCTest
 
 class APITests: XCTestCase {
 
+    var sut: APIClient!
+
+    override func setUp() {
+        sut = APIClient(credentials: .defaultEstadao)
+    }
+
+    override func tearDown() {
+        sut = nil
+    }
+
     func testLogin() {
-        let sut = APIClient(credentials: .defaultEstadao)
         let expectation = self.expectation(description: "Login")
         sut.login { (result) in
             do {
@@ -26,9 +35,8 @@ class APITests: XCTestCase {
     }
 
     func testFetchPreviewNews() {
-        let sut = APIClient(credentials: .defaultEstadao)
         let expectation = self.expectation(description: "PreviewNews")
-        afterLogin(on: sut) {
+        afterLogin(on: sut) { [self] in
             sut.fetchPreviewNews { (result) in
                 do {
                     let value = try result.get()
@@ -43,9 +51,8 @@ class APITests: XCTestCase {
     }
 
     func testFetchFullNews() {
-        let sut = APIClient(credentials: .defaultEstadao)
         let expectation = self.expectation(description: "FullNews")
-        afterLogin(on: sut) {
+        afterLogin(on: sut) { [self] in
             sut.fetchFullNews(id: "1") { (result) in
                 do {
                     let value = try result.get()
