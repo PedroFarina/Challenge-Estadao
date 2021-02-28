@@ -5,7 +5,7 @@
 //  Created by Pedro Giuliano Farina on 28/02/21.
 //
 
-import Foundation
+//Um Swift Package de requisições GET e POST feito por mim há 1 ano atrás.
 import EndpointsRequests
 
 internal class APIClient {
@@ -20,44 +20,56 @@ internal class APIClient {
         ["Authorization": "Bearer \(jwt?.token ?? "")"]
     }
 
+    private static let loginPath = "https://teste-dev-mobile-api.herokuapp.com/login"
+    private static let previewNewsPath = "https://teste-dev-mobile-api.herokuapp.com/news"
+    private static let fullNewsPath = "https://teste-dev-mobile-api.herokuapp.com/news/{id}"
+
     internal init(credentials: Credentials) {
         self.credentials = credentials
     }
 
     internal func login(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
-        Requests.postRequest(url: "https://teste-dev-mobile-api.herokuapp.com/login",
+        Requests.postRequest(url: APIClient.loginPath,
                              method: .post,
                              header: nil,
                              params: credentials,
                              decodableType: Token.self) { [weak self] in
-            self?.completeResult(answer: $0, optionalCast: {$0 as? Token}, completionHandler: { (result) in
-                do {
-                    self?.jwt = try result.get()
-                    completionHandler(.success(true))
-                } catch {
-                    completionHandler(.failure(error))
-                }
-            })
+            switch $0 {
+            case .result(let answer as Token):
+                self?.jwt = answer
+                completionHandler(.success(true))
+            case .result(_):
+                completionHandler(.failure(APIErrors.unexpectedAnswer))
+            case .error(let err):
+                completionHandler(.failure(err))
+            }
         }
     }
 
     internal func fetchPreviewNews(completionHandler: @escaping (Result<[PreviewNews], Error>) -> Void) {
-        Requests.getRequest(url: "https://teste-dev-mobile-api.herokuapp.com/news",
-                            decodableType: [PreviewNews].self,
-                            header: authorizationHeader) { [weak self] in
-            self?.completeResult(answer: $0, optionalCast: {$0 as? [PreviewNews]}, completionHandler: completionHandler)
-        }
+        getRequestWithDefaultCompletion(url: APIClient.previewNewsPath,
+                        decodableType: [PreviewNews].self,
+                        completionHandler: completionHandler)
     }
 
     internal func fetchFullNews(id: String, completionHandler: @escaping (Result<[FullNews], Error>) -> Void) {
-        Requests.getRequest(url: "https://teste-dev-mobile-api.herokuapp.com/news/\(id)",
-                            decodableType: [FullNews].self,
+        let fullPath = APIClient.fullNewsPath.replacingOccurrences(of: "{id}", with: id)
+        getRequestWithDefaultCompletion(url: fullPath,
+                        decodableType: [FullNews].self,
+                        completionHandler: completionHandler)
+    }
+
+    private func getRequestWithDefaultCompletion<T: Decodable>(url: String,
+                                               decodableType: T.Type,
+                                               completionHandler: @escaping (Result<T, Error>) -> Void) {
+        Requests.getRequest(url: url,
+                            decodableType: decodableType,
                             header: authorizationHeader) { [weak self] in
-            self?.completeResult(answer: $0, optionalCast: {$0 as? [FullNews]}, completionHandler: completionHandler)
+            self?.defaultCompleteResult(answer: $0, optionalCast: {$0 as? T}, completionHandler: completionHandler)
         }
     }
 
-    private func completeResult<T>(answer: TaskAnswer<Any>,
+    private func defaultCompleteResult<T>(answer: TaskAnswer<Any>,
                                    optionalCast: (Any) -> T?,
                                    completionHandler: @escaping (Result<T, Error>) -> Void) {
         switch answer {
