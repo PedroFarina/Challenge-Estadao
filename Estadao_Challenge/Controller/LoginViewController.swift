@@ -74,9 +74,13 @@ class LoginViewController: UIViewController {
             do {
                 if try result.get() {
                     mainQueueAction = {
-                        let previewNewsViewController = PreviewNewsViewController()
-                        previewNewsViewController.modalPresentationStyle = .fullScreen
-                        self?.present(previewNewsViewController, animated: true)
+                        guard let client = self?.client else {
+                            return
+                        }
+                        let previewNewsViewController = PreviewNewsViewController(client: client)
+                        let navigationController = UINavigationController(rootViewController: previewNewsViewController)
+                        navigationController.modalPresentationStyle = .fullScreen
+                        self?.present(navigationController, animated: true)
                     }
                 } else {
                     mainQueueAction = { self?.statusLabel.text = "Ops! Não foi possível logar. Favor tentar novamente." }

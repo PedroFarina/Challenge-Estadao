@@ -13,6 +13,10 @@
 		02AFBB1925EBF2AD00A15643 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFBB1825EBF2AD00A15643 /* Token.swift */; };
 		02AFBB1F25EBF41800A15643 /* PreviewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFBB1E25EBF41800A15643 /* PreviewNews.swift */; };
 		02D26F7025EC39B000EC9E1A /* PreviewNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D26F6F25EC39B000EC9E1A /* PreviewNewsViewController.swift */; };
+		02D26F7825EC4F9E00EC9E1A /* PreviewNewsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D26F7725EC4F9D00EC9E1A /* PreviewNewsTableViewDataSource.swift */; };
+		02D26F7E25EC501900EC9E1A /* PreviewNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D26F7D25EC501900EC9E1A /* PreviewNewsTableViewCell.swift */; };
+		02D26F8225EC51CE00EC9E1A /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D26F8125EC51CE00EC9E1A /* LabelExtension.swift */; };
+		02D26F8E25EC557D00EC9E1A /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D26F8D25EC557D00EC9E1A /* RemoteImageView.swift */; };
 		02F1CCF825EB39FA00915A82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1CCF725EB39FA00915A82 /* AppDelegate.swift */; };
 		02F1CCFA25EB39FA00915A82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1CCF925EB39FA00915A82 /* SceneDelegate.swift */; };
 		02F1CCFC25EB39FA00915A82 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1CCFB25EB39FA00915A82 /* LoginViewController.swift */; };
@@ -36,15 +40,19 @@
 		0213F5B025EB3FF2001A9233 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		0213F5B825EB408A001A9233 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		0213F5C125EB44FA001A9233 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		023F7BA325EC5BCD00B57185 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02AFBB1825EBF2AD00A15643 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		02AFBB1E25EBF41800A15643 /* PreviewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNews.swift; sourceTree = "<group>"; };
 		02D26F6F25EC39B000EC9E1A /* PreviewNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNewsViewController.swift; sourceTree = "<group>"; };
+		02D26F7725EC4F9D00EC9E1A /* PreviewNewsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNewsTableViewDataSource.swift; sourceTree = "<group>"; };
+		02D26F7D25EC501900EC9E1A /* PreviewNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNewsTableViewCell.swift; sourceTree = "<group>"; };
+		02D26F8125EC51CE00EC9E1A /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
+		02D26F8D25EC557D00EC9E1A /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		02F1CCF425EB39FA00915A82 /* Estadao_Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Estadao_Challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F1CCF725EB39FA00915A82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02F1CCF925EB39FA00915A82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		02F1CCFB25EB39FA00915A82 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02F1CD0025EB39FB00915A82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		02F1CD0525EB39FB00915A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F1CD0A25EB39FC00915A82 /* Estadao_ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Estadao_ChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F1CD1025EB39FC00915A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02F868F325EC1F0800EF44C8 /* FullNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNews.swift; sourceTree = "<group>"; };
@@ -98,6 +106,30 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		02D26F7325EC4C7700EC9E1A /* PreviewNews */ = {
+			isa = PBXGroup;
+			children = (
+				02D26F7D25EC501900EC9E1A /* PreviewNewsTableViewCell.swift */,
+			);
+			path = PreviewNews;
+			sourceTree = "<group>";
+		};
+		02D26F7625EC4F8300EC9E1A /* PreviewNews */ = {
+			isa = PBXGroup;
+			children = (
+				02D26F7725EC4F9D00EC9E1A /* PreviewNewsTableViewDataSource.swift */,
+			);
+			path = PreviewNews;
+			sourceTree = "<group>";
+		};
+		02D26F9525EC5ABE00EC9E1A /* PreviewNews */ = {
+			isa = PBXGroup;
+			children = (
+				02D26F6F25EC39B000EC9E1A /* PreviewNewsViewController.swift */,
+			);
+			path = PreviewNews;
+			sourceTree = "<group>";
+		};
 		02F1CCEB25EB39FA00915A82 = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +151,10 @@
 		02F1CCF625EB39FA00915A82 /* Estadao_Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				02F1CD4225EB3DA100915A82 /* Controller */,
-				02F1CD4125EB3D9E00915A82 /* View */,
+				023F7BA325EC5BCD00B57185 /* Info.plist */,
 				02F1CD4025EB3D9900915A82 /* Model */,
-				02F1CD0525EB39FB00915A82 /* Info.plist */,
+				02F1CD4125EB3D9E00915A82 /* View */,
+				02F1CD4225EB3DA100915A82 /* Controller */,
 			);
 			path = Estadao_Challenge;
 			sourceTree = "<group>";
@@ -140,6 +172,7 @@
 		02F1CD4025EB3D9900915A82 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02D26F7625EC4F8300EC9E1A /* PreviewNews */,
 				02F868F725EC215D00EF44C8 /* StringExtension.swift */,
 				0213F5BE25EB437C001A9233 /* API */,
 				02F1CCF725EB39FA00915A82 /* AppDelegate.swift */,
@@ -151,6 +184,9 @@
 		02F1CD4125EB3D9E00915A82 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				02D26F8D25EC557D00EC9E1A /* RemoteImageView.swift */,
+				02D26F8125EC51CE00EC9E1A /* LabelExtension.swift */,
+				02D26F7325EC4C7700EC9E1A /* PreviewNews */,
 				02F1CD0025EB39FB00915A82 /* Assets.xcassets */,
 			);
 			path = View;
@@ -160,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				02F1CCFB25EB39FA00915A82 /* LoginViewController.swift */,
-				02D26F6F25EC39B000EC9E1A /* PreviewNewsViewController.swift */,
+				02D26F9525EC5ABE00EC9E1A /* PreviewNews */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,13 +305,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02D26F7825EC4F9E00EC9E1A /* PreviewNewsTableViewDataSource.swift in Sources */,
 				02F1CCFC25EB39FA00915A82 /* LoginViewController.swift in Sources */,
+				02D26F8225EC51CE00EC9E1A /* LabelExtension.swift in Sources */,
 				02F868F425EC1F0800EF44C8 /* FullNews.swift in Sources */,
 				02F1CCF825EB39FA00915A82 /* AppDelegate.swift in Sources */,
 				0213F5B925EB408A001A9233 /* APIClient.swift in Sources */,
+				02D26F8E25EC557D00EC9E1A /* RemoteImageView.swift in Sources */,
 				02AFBB1925EBF2AD00A15643 /* Token.swift in Sources */,
 				02F868F825EC215D00EF44C8 /* StringExtension.swift in Sources */,
 				02AFBB1F25EBF41800A15643 /* PreviewNews.swift in Sources */,
+				02D26F7E25EC501900EC9E1A /* PreviewNewsTableViewCell.swift in Sources */,
 				02F1CCFA25EB39FA00915A82 /* SceneDelegate.swift in Sources */,
 				02D26F7025EC39B000EC9E1A /* PreviewNewsViewController.swift in Sources */,
 				0213F5B125EB3FF2001A9233 /* Credentials.swift in Sources */,
