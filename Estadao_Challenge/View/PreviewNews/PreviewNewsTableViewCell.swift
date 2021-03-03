@@ -46,10 +46,10 @@ internal class PreviewNewsTableViewCell: UITableViewCell {
         contentView.addSubview(previewLabel)
         contentView.addSubview(dateLabel)
         contentView.addSubview(sourceLabel)
-        setupConstraints()
+        activateConstraints()
     }
 
-    internal func setupConstraints() {
+    internal func activateConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15),
