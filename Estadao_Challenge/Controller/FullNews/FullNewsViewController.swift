@@ -20,7 +20,6 @@ internal class FullNewsViewController: UIViewController {
         bodyLabel.attributedText = document.getCorpoFormatado()
         dateLabel.text = document.datapub
         sourceLabel.text = document.source
-        print(document.getLegenda())
     }
 
     required init?(coder: NSCoder) {
