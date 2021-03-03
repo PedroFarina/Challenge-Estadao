@@ -11,6 +11,7 @@
 		0213F5B925EB408A001A9233 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213F5B825EB408A001A9233 /* APIClient.swift */; };
 		0213F5C225EB44FA001A9233 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213F5C125EB44FA001A9233 /* APITests.swift */; };
 		026F077125EF0E4900308F88 /* NSAttributedString Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F077025EF0E4900308F88 /* NSAttributedString Extension.swift */; };
+		026F077725EF2EF200308F88 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F077625EF2EF200308F88 /* UIImageExtension.swift */; };
 		028E820825ED9CE700103E00 /* PreviewNewsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028E820725ED9CE600103E00 /* PreviewNewsTableViewDelegate.swift */; };
 		02AFBB1925EBF2AD00A15643 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFBB1825EBF2AD00A15643 /* Token.swift */; };
 		02AFBB1F25EBF41800A15643 /* PreviewNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFBB1E25EBF41800A15643 /* PreviewNews.swift */; };
@@ -45,6 +46,7 @@
 		0213F5C125EB44FA001A9233 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		023F7BA325EC5BCD00B57185 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		026F077025EF0E4900308F88 /* NSAttributedString Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString Extension.swift"; sourceTree = "<group>"; };
+		026F077625EF2EF200308F88 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		028E820725ED9CE600103E00 /* PreviewNewsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNewsTableViewDelegate.swift; sourceTree = "<group>"; };
 		02AFBB1825EBF2AD00A15643 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		02AFBB1E25EBF41800A15643 /* PreviewNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewNews.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				02D26F7625EC4F8300EC9E1A /* PreviewNews */,
 				02F868F725EC215D00EF44C8 /* StringExtension.swift */,
 				026F077025EF0E4900308F88 /* NSAttributedString Extension.swift */,
+				026F077625EF2EF200308F88 /* UIImageExtension.swift */,
 				0213F5BE25EB437C001A9233 /* API */,
 				02F1CCF725EB39FA00915A82 /* AppDelegate.swift */,
 				02F1CCF925EB39FA00915A82 /* SceneDelegate.swift */,
@@ -327,6 +330,7 @@
 				02F1CCFC25EB39FA00915A82 /* LoginViewController.swift in Sources */,
 				02D26F8225EC51CE00EC9E1A /* LabelExtension.swift in Sources */,
 				02F868F425EC1F0800EF44C8 /* FullNews.swift in Sources */,
+				026F077725EF2EF200308F88 /* UIImageExtension.swift in Sources */,
 				02F1CCF825EB39FA00915A82 /* AppDelegate.swift in Sources */,
 				02D344D725EF01F6006C86E2 /* FullNewsViewController.swift in Sources */,
 				026F077125EF0E4900308F88 /* NSAttributedString Extension.swift in Sources */,
