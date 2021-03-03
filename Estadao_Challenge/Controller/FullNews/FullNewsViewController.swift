@@ -13,7 +13,7 @@ internal class FullNewsViewController: UIViewController {
         return fullNews.documento
     }
 
-    init(news fullNews: FullNews) {
+    internal init(news fullNews: FullNews) {
         self.fullNews = fullNews
         super.init(nibName: nil, bundle: nil)
         titleLabel.text = document.titulo

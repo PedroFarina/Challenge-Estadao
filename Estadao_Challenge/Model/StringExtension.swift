@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+internal extension String {
     func toHTML() -> NSAttributedString {
         if let data = data(using: .utf8),
            let htmlString = try? NSAttributedString(data: data,

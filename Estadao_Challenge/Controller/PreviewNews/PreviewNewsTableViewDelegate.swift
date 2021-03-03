@@ -14,7 +14,7 @@ internal protocol PreviewNewsTableViewDelegateObserver: class {
 internal class PreviewNewsTableViewDelegate: NSObject, UITableViewDelegate {
 
     internal weak var observer: PreviewNewsTableViewDelegateObserver?
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? PreviewNewsTableViewCell {
             observer?.didSelectNewsWithID(cell.news.id_documento)
         }

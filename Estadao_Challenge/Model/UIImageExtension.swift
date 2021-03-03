@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIImage {
+internal extension UIImage {
     func processImage(toWidth width: CGFloat) -> UIImage? {
         let newSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
 

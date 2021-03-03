@@ -24,7 +24,7 @@ internal class PreviewNewsTableViewCell: UITableViewCell {
     private let sourceLabel: UILabel = .makeViewCodeLabel(with: .callout)
     internal let news: PreviewNews
 
-    init(news: PreviewNews) {
+    internal init(news: PreviewNews) {
         self.news = news
         self.titleLabel.text = news.titulo
         self.previewLabel.text = news.linha_fina

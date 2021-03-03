@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+internal class LoginViewController: UIViewController {
 
     private let client = APIClient(credentials: .defaultEstadao)
 
