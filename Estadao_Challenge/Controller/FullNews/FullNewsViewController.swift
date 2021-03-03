@@ -33,6 +33,13 @@ internal class FullNewsViewController: UIViewController {
 
         return scrollView
     }()
+    private let contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemBackground
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
 
     private let titleLabel: UILabel = .makeViewCodeLabel(with: .title2)
     private let bodyLabel: UILabel  = .makeViewCodeLabel(with: .body)
@@ -40,27 +47,39 @@ internal class FullNewsViewController: UIViewController {
     private let sourceLabel: UILabel = .makeViewCodeLabel(with: .callout)
 
     override func viewDidLoad() {
+        navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = .systemBackground
         super.viewDidLoad()
         view.addSubview(scrollView)
-        scrollView.addSubview(titleLabel)
-        scrollView.addSubview(bodyLabel)
-        scrollView.addSubview(dateLabel)
-        scrollView.addSubview(sourceLabel)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(bodyLabel)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(sourceLabel)
         activateConstraints()
+        DispatchQueue.main.async {
+            self.bodyLabel.attributedText = self.bodyLabel.attributedText?.fitImagesToScreenSize(maxWidth: self.bodyLabel.frame.width)
+        }
     }
 
     private func activateConstraints() {
         var constraints = [
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            titleLabel.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 0.9),
-            titleLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: view.widthAnchor),
 
-            sourceLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -15)
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.9),
+            titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+
+            sourceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ]
         constraints.append(contentsOf: centralizedConstraints(of: bodyLabel, relativeTo: titleLabel, constant: 10))
         constraints.append(contentsOf: centralizedConstraints(of: dateLabel, relativeTo: bodyLabel, constant: 10))
